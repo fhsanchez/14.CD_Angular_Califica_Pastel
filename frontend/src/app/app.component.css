@@ -1,0 +1,59 @@
+* {
+  /* margin: 0px;
+  padding: 0px; */
+  border: 1px outset red;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 1000px;
+}
+
+.first {
+  display: flex;
+  flex-direction: row;
+}
+
+.cake_principal {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.mini_form {
+  display: flex;
+  flex-direction: column;
+}
+
+.cake_rate {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.cake_rate_input {
+  display: flex;
+  flex-direction: column;
+}
+
+.img_cake_preview {
+  width: 200px;
+}
+
+.img_cake_normal {
+  width: 400px;
+}
+
+.second {
+  display: flex;
+  flex-direction: row;
+}
+
+.labels_rate{
+  display: flex;
+  flex-direction: column;
+  margin-top: 125px;
+
+
+}
