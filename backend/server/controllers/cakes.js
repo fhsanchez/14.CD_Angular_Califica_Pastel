@@ -18,28 +18,27 @@ module.exports = {
     console.log("Create ....");
     console.log(req.body);
     cake.name = req.body.name;
-    cake.url_img = req.body.url_img;
+    cake.urlImg = req.body.urlImg;
     cake
       .save()
       .then((newCake) => res.json(newCake))
       .catch((err) => console.log(err));
   },
 
-  newRate: function (req, res) {
+  newRate: async function (req, res) {
 
     const id = req.params.id;
     const { _rate, _comment } = req.body;
-    console.log("newRate ....");
-    console.log("req.params.id: " + req.params.id);
-    console.log("req.body:" + req.body);
-    console.log("_rate:" + _rate);
-    console.log("_comment:" + _comment);
-
+   
+    const rate = new Rate();
+    rate.rate = _rate;
+    rate.comment= _comment;
+    const rateSave = await rate.save()
      Cake.findOneAndUpdate(
       { _id: id },
       {
         $push: {
-          rateCake: { _rate, _comment }}})
+          rateCake: rateSave}})
       .then((newCakeRate) => res.json(newCakeRate))
       .catch((err) => console.log(err));
   },
@@ -57,10 +56,10 @@ module.exports = {
   //     .catch((err) => res.json( { message : "fault",  error  : err}));
   // },
 
-  // delete: function (req, res) {
-  //   let id = req.params.id;
-  //   Cake.deleteOne({ _id: id })
-  //     .then((deletedCake) => res.json(deletedCake))
-  //     .catch((err) => res.json(err));
-  // },
+  delete: function (req, res) {
+    let id = req.params.id;
+    Cake.deleteOne({ _id: id })
+      .then((deletedCake) => res.json(deletedCake))
+      .catch((err) => res.json(err));
+  },
 };

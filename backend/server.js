@@ -4,11 +4,7 @@ const Otter = require('./server/models/cake');
 const router = require('./server/config/routes');
 const cors = require('cors');
 
-
 const app = express();
-
-const bodyParser = require("body-parser");
-app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(cors());
 

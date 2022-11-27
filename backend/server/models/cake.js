@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 //Generamos un esquema de objeto JSON que almacenaremos
 const RateSchema = new mongoose.Schema(
     {
-        rete: {type: Number},
+        rate: {type: Number},
         comment: {type: String}
     }, { timestamps: true }
 
@@ -12,7 +12,7 @@ const RateSchema = new mongoose.Schema(
 const CakeSchema = new mongoose.Schema(
     {
     name: {type: String},
-    url_img: {type: String},
+    urlImg: {type: String},
     rateCake: [RateSchema]
     }, { timestamps: true }
 

@@ -33,10 +33,10 @@ app.get("/cakes", (req, res) => {
   //   tasks.edit(req, res);
   // });
   
-  // // 5. Elimina una Cake
-  // app.delete("/cakes/:id", (req, res) => {
-  //     tasks.delete(req, res)
-  // });
+  // 5. Elimina una Cake
+  app.delete("/cakes/:id", (req, res) => {
+      cakes.delete(req, res)
+  });
   
 
 }
